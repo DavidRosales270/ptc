@@ -1,0 +1,16 @@
+[22-Jul-2017 21:58:31 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'require_once(public/securimage/securimage.php): failed to open stream: No such file or directory' in /home/xirix4520/public_html/storage/framework/views/bf34957ead304f1b4e51670445012b60:73
+Stack trace:
+#0 /home/xirix4520/public_html/storage/framework/views/bf34957ead304f1b4e51670445012b60(73): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require_once(pu...', '/home/xirix4520...', 73, Array)
+#1 /home/xirix4520/public_html/storage/framework/views/bf34957ead304f1b4e51670445012b60(73): require_once()
+#2 /home/xirix4520/public_html/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(42): include('/home/xirix4520...')
+#3 /home/xirix4520/public_html/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(58): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/xirix4520...', Array)
+#4 /home/xirix4520/public_html/vendor/laravel/framework/src/Illuminate/View/View.php(138): Illuminate\View\Engines\CompilerEngine->ge in /home/xirix4520/public_html/storage/framework/views/bf34957ead304f1b4e51670445012b60 on line 73
+[22-Jul-2017 21:58:31 UTC] PHP Fatal error:  main(): Failed opening required 'public/securimage/securimage.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/xirix4520/public_html/storage/framework/views/bf34957ead304f1b4e51670445012b60 on line 73
+[22-Jul-2017 21:58:37 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'require_once(public/securimage/securimage.php): failed to open stream: No such file or directory' in /home/xirix4520/public_html/storage/framework/views/bf34957ead304f1b4e51670445012b60:73
+Stack trace:
+#0 /home/xirix4520/public_html/storage/framework/views/bf34957ead304f1b4e51670445012b60(73): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'require_once(pu...', '/home/xirix4520...', 73, Array)
+#1 /home/xirix4520/public_html/storage/framework/views/bf34957ead304f1b4e51670445012b60(73): require_once()
+#2 /home/xirix4520/public_html/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(42): include('/home/xirix4520...')
+#3 /home/xirix4520/public_html/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(58): Illuminate\View\Engines\PhpEngine->evaluatePath('/home/xirix4520...', Array)
+#4 /home/xirix4520/public_html/vendor/laravel/framework/src/Illuminate/View/View.php(138): Illuminate\View\Engines\CompilerEngine->ge in /home/xirix4520/public_html/storage/framework/views/bf34957ead304f1b4e51670445012b60 on line 73
+[22-Jul-2017 21:58:37 UTC] PHP Fatal error:  main(): Failed opening required 'public/securimage/securimage.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/xirix4520/public_html/storage/framework/views/bf34957ead304f1b4e51670445012b60 on line 73
