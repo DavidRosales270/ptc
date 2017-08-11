@@ -88,7 +88,7 @@ class AuthController extends Controller
 		
 	if (sizeof($errors) == 0) {
 	        $rules = [
-	            'name' => 'required|min:3|max:16|unique:users,name|regex:/^[a-záéíóúàèìòùäëïöüñ\s]+$/i',
+	            'name' => 'required|min:3|max:16|unique:users,name|regex:/^[0-9a-záéíóúàèìòùäëïöüñ\s]+$/i',
 	            'email' => 'required|email|max:255|unique:users,email',
 	            'password' => 'required|min:6|max:18|confirmed',
 	            'anionac' => 'required|min:4|max:4', 
