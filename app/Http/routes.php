@@ -171,4 +171,9 @@ Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 
+/******** User Dashboard ******/
 Route::get('dashboard', 'DashboardController@index');
+Route::get('dashboard/banners', 'DashboardController@banners');
+Route::get('dashboard/user', 'DashboardController@user');
+Route::get('dashboard/historial', 'DashboardController@history');
+Route::get('dashboard/acceso', 'DashboardController@access');

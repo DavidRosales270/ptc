@@ -9,86 +9,13 @@
         	{{Session::get('status')}}
     	@endif
 </div>
-
-<style type="text/css">
-    .header_option {
-        background-color: #e10019; 
-        color: #FFF; 
-        padding: 7px;
-    }
-    .header_option span { font-size: 13px; }
-    
-    .menu-dashboad { float: left; width: 20%; }
-    .menu-dashboad ul {
-        display: block;
-        
-    }
-    
-    .menu-dashboad ul li { list-style: none; margin-top: 5px; padding: 0}
-    
-    .menu-dashboad ul li a { font-size: 12px; padding: 0; }
-    
-    .content-dashboard { width: 79%; float: right;}
-    
-    .content-dashboard .menu-top {
-        text-align: center; 
-        width: 100%; 
-        padding: 10px; 
-        background-color: #DFDFE1; 
-        border-radius: 5px; 
-        -moz-border-radius: 5px; 
-        -webkit-border-radius: 5px; margin-top: 5px;
-    }
-    .line-hr {
-        border: 2px solid red; 
-        padding: 0; 
-        margin: 0; 
-        margin-top: 8px;
-        background-color: red;
-        margin: 10px 0;
-    } 
-    .box-item {
-        text-align: justify; 
-        font-size: 14px; 
-    }
-    .box-item span.head {
-        color: #B7B7B7; 
-        font-weight: bold;
-        margin: 10px 0;
-    }
-</style>
+<link rel="stylesheet" type="text/css" href="../public/css/dashboard.css">
 
 <div style="position: relative;  margin: 0; padding: 0; ">
 	<div style="display: inline-block; vertical-align: middle; width: 100%;  margin: 0; padding: 10px; ">
-    		{!! csrf_field() !!}
+    	{!! csrf_field() !!}
+        @include('dashboard/menu')
         
-        <div class="col-md-4 menu-dashboad">
-            <div class="header_option" >
-				 <span><b>Global</b></span>
-			</div>
-            <ul>
-                <li><a href=''>Resumen</a></li>
-                <li><a href=''>Banners</a></li>
-                <li><a href=''>Estadisticas</a></li>
-            </ul>
-            <div class="header_option" >
-				 <span ><b>Opciones</b></span>
-			</div>
-            
-            <ul>
-                <li><a href=''>Personales</a></li>
-                <li><a href=''>Anuncios</a></li>
-            </ul>
-            
-            <div class="header_option" >
-				 <span style=' font-size: 13px; '><b>Registros</b></span>
-			</div>
-            
-            <ul>
-                <li><a href=''>Historial</a></li>
-                <li><a href=''>Anuncios</a></li>
-            </ul>
-        </div>
         
         <div class="content-dashboard">
             <div class="col-md-4">
@@ -198,9 +125,45 @@
             
             <div style="clear:both"></div>
             
+            <br />
              
+            <div class="col-md-6">
+                <div class="box-item">
+                    <span class="head" style="color: #E10119">Últimas entradas del historial</span>
+                    <hr  class="line-hr">
+                </div>
+                    <table style="width:100%"  class="table">
+                        <tr>
+                            <td><b>2017/08/09</b> </td>
+                            <td>Registro</td>
+                        </tr>
+                    </table>
+            </div>
             
-            
+            <div class="col-md-6">
+            <div class="box-item">
+                    <span class="head" style="color: #E10119">Últimas noticias</span>
+                    <hr  class="line-hr">
+                </div>
+                    <table style="width:100%;" class="table" >
+                        <tr>
+                            <td><b>2017/08/09</b> </td>
+                            <td><a href="">Let the games begin!</a></td>
+                        </tr>
+                        <tr>
+                            <td><b>2017/08/09</b> </td>
+                            <td><a href="">Stripe verification for purchases</a></td>
+                        </tr>
+                        <tr>
+                            <td><b>2017/08/09</b> </td>
+                            <td><a href="">Update on TOS 5.1 regarding PayPal and a bonus</a></td>
+                        </tr>
+                        <tr>
+                            <td><b>2017/08/09</b> </td>
+                            <td><a href="">Express promotion</a></td>
+                        </tr>
+                    </table>
+            </div>
         </div>
         
         <div style="clear:both"></div>

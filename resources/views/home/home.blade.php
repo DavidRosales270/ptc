@@ -28,7 +28,7 @@
 				@if (Auth::check())
 					<div style="text-align: center; width: 100%; padding-top: 10px; height: 40px; background-color: #DFDFE1; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; margin-top: 5px; ">
 						<img style="margin-left: 8px; " src="../public/user-icon.png" />
-						<a style="color: #1697E3; font-size: 14px; " href="#">{{Auth::user()->name}}</a>
+						<a style="color: #1697E3; font-size: 14px; " href="/dashboard">{{Auth::user()->name}}</a>
 						<span style="margin-left: 8px; font-size: 14px; font-family: Lato; letter-spacing: 1.2px;"><b>$ 0.0252</b></span>
 						<label style="margin-left: 8px; margin-right: 0px; padding: 4px; background-color: #818181; color: #FFF; border-radius: 8px 0px 0px 8px; -moz-border-radius: 8px 0px 0px 8px; -webkit-border-radius: 8px 0px 0px 8px;" type="button" value="" >Standard</label>
 						<input type="button" value="+" style="font-weight: bold; padding: 4px; margin-left: -4px; background-color: green; border: none; color: #fff; " />

@@ -57,17 +57,19 @@ if (isset($_SESSION['ctform']['error']) &&  $_SESSION['ctform']['error'] == true
     color: white;
     margin-left: 8px;
     padding: 1px 6px;
-    z-index: ; /* hints stay above all other elements */
+    z-index: 9999; /* hints stay above all other elements */
     position: absolute; /* allows proper formatting if hint is two lines */
     display: none;
+		width:200px;
+		text-align: left;
 }
 
     .form_hint::before {
-        content: "\25C0";
         color: #d45252;
         position: absolute;
         top: 1px;
         left: -6px;
+				
     }
 </style>
 <form method="POST" action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'] . $_SERVER['QUERY_STRING']) ?>" id="contact_form">
@@ -84,27 +86,46 @@ if (isset($_SESSION['ctform']['error']) &&  $_SESSION['ctform']['error'] == true
 			      		<div class="input-group pull-center" style="margin: auto; text-align: right; width: 100%; " >
 			                  	<label for="name" class="input-group-addon" style="cursor: pointer; text-align: right; font-size: 11px; min-width: 200px; " width="40%" >Nombre de Usuario : </label >
                   				<input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" width="60%"   />
-                                <span class="form_hint">El Nombre de Usuario no puede tener menos de 4 caracteres.</span>
+                                <span class="form_hint">
+																			Introduzca el nombre de usuario (o alias); que desea.
+																			<br><br>Solo puede contener letras y números, tiene que comenzar con una letra y su longitud tiene que ser de entre 4 a 14 caracteres.
+																			<br><br>Si el nombre de usuario que escogió ya está en uso, siempre puede escoger otro diferente.<br><br>
+																</span>
 			                </div>
 			                <div class="text-danger">{{$errors->first('name')}}</div>
 			        </div>
 				<div class="form-group" style="text-align: center; width: 100%; max-width: 520px; margin-left: auto; margin-right: auto; " >
 			      		<div class="input-group pull-center" style="margin: auto; text-align: right; width: 100%; " >
 			                  	<label for="password" class="input-group-addon" style="cursor: pointer; text-align: right; font-size: 11px; min-width: 200px; " width="40%" >Contraseña : </label >
-			                  	<input type="password" id="password" class="form-control" name="password"  width="60%" required  />
+			                  	<input type="password" id="password" class="form-control" name="password"  width="60%"   />
+													<span class="form_hint">
+																			Introduzca su contraseña.
+																			<br><br>Únicamente puede contener letras y números y su longitud tiene que ser de entre 4 a 100 caracteres.
+																			<br><br>Con esta contraseña podrá acceder a su cuenta de NeoBux así que manténgala en secreto y en un lugar seguro.
+																			<br><br>Como medida de seguridad, su contraseña será cifrada al almacenarla en nuestra base de datos, por lo tanto, ni siquiera nosotros podremos saber cuál es.
+																			<br><br>Si es un usuario registrado de otros sitios, le recomendamos que aquí utilice una contraseña diferente.
+																</span>
 			                </div>			                
 			                <div class="text-danger">{{$errors->first('password')}}</div>
 			        </div>
 			        <div class="form-group" style="text-align: center; width: 100%; max-width: 520px; margin-left: auto; margin-right: auto; " >
 			      		<div class="input-group pull-center" style="margin: auto; text-align: right; width: 100%; " >
 			                  	<label for="password_confirmation" class="input-group-addon" style="cursor: pointer; text-align: right; font-size: 11px; min-width: 200px; " width="40%" >Confirmación de Contraseña : </label >
-                  				<input type="password" name="password_confirmation" id="password_confirmation" class="form-control" width="60%" required  />
+                  				<input type="password" name="password_confirmation" id="password_confirmation" class="form-control" width="60%"   />
+
+													<span class="form_hint">
+																			
+																			Introduzca nuevamente su contraseña como confirmación.
+																</span>
 			                </div>
 			        </div>
 			        <div class="form-group" style="text-align: center; width: 100%; max-width: 520px; margin-left: auto; margin-right: auto; " >
 			      		<div class="input-group pull-center" style="margin: auto; text-align: right; width: 100%; " >
 			                  	<label for="email" class="input-group-addon" style="cursor: pointer; text-align: right; font-size: 11px; min-width: 200px; " width="40%" >Email : </label>
-                  				<input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}" width="60%" required  />
+                  				<input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}" width="60%"   />
+													<span class="form_hint">
+													Introduzca su dirección personal de correo electrónico.<br><br>Esta dirección de correo únicamente será utilizada por NeoBux. Solo la usaremos para enviarle noticias de actualizaciones, reportes y otra información importante así como para recuperar su contraseña, notificaciones del foro y respuestas del soporte.<br><br>Esta dirección de correo electrónico nunca será mostrada, ofrecida o vendida.<br>Únicamente es la forma en la que nos comunicaremos con usted.
+													</span>
 			                </div>
 			                <div class="text-danger">{{$errors->first('email')}}</div>
 			        </div>
@@ -118,7 +139,7 @@ if (isset($_SESSION['ctform']['error']) &&  $_SESSION['ctform']['error'] == true
                   		<div class="form-group" style="text-align: center; width: 100%; max-width: 520px; margin-left: auto; margin-right: auto; " >
 			      		<div class="input-group pull-center" style="margin: auto; text-align: right; width: 100%; " >
 			     			<label for="anionac" class="input-group-addon" style="cursor: pointer; text-align: right; font-size: 11px; min-width: 200px; " width="40%" >Año de Nacimiento: </label >
-			     			<select name="anionac" id="anionac" class="form-control" value="{{ old('anionac') }}" width="60%" required >			     				
+			     			<select name="anionac" id="anionac" class="form-control" value="{{ old('anionac') }}" width="60%"  >			     				
 			     				<?php
 			     					$anioActual = date("Y");
 			     					for ($i = $anioActual; $i >= $anioActual - 100; $i--) {
@@ -167,7 +188,7 @@ if (isset($_SESSION['ctform']['error']) &&  $_SESSION['ctform']['error'] == true
                   		</div>
                   		<div class="form-inline" style="text-align: center; ">
 			      		<div class="checkbox" style="font-size: 11px;">
-			     			<label><input type="checkbox" value="" required >Declaro haber leido, comprendido <br />y aceptado los <a href="#">Términos de servicio</a>.</label>
+			     			<label><input type="checkbox" value=""  >Declaro haber leido, comprendido <br />y aceptado los <a href="#">Términos de servicio</a>.</label>
                   			</div>
 			     		<button type="submit" class="btn btn-danger" style="min-width: 150px; margin-left: 8px; margin-right: 8px; font-size: 11px;">Enviar</button>
                   		</div>

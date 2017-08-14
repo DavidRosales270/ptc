@@ -10,6 +10,7 @@
 	var popUpObj = null;
 	
 	function abrirpubli(ida) {
+		
 		popUpObj = window.open('anuncio/i/' + ida);
 	}
 	
@@ -18,6 +19,8 @@
 	}
 	
 	function visalea(ctrl) {
+
+		$(".anuncioT2").find('svg').hide();	
 		var svg = document.getElementById(ctrl);
 		svg.style.display = "block";
 		var left = Math.floor((Math.random() * 140) + 1);
