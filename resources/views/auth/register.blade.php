@@ -34,6 +34,42 @@ if (isset($_SESSION['ctform']['error']) &&  $_SESSION['ctform']['error'] == true
 <div class="success">The captcha was correct and the message has been sent!  The captcha was solved in <?php echo $_SESSION['ctform']['timetosolve'] ?> seconds.</div><br />
 <?php endif; ?>
 
+<style>
+    #contact_form input:required, #contact_form textarea:required {
+        background: #fff url(images/red_asterisk.png) no-repeat 98% center;
+    } 
+    
+    #contact_form input:focus + .form_hint {
+    display: inline;
+}
+
+#contact_form input:required:valid + .form_hint {
+    background: #28921f;
+}
+
+    #contact_form input:required:valid + .form_hint::before {
+        color: #28921f;
+    }
+    
+.form_hint {
+    background: #d45252;
+    border-radius: 3px 3px 3px 3px;
+    color: white;
+    margin-left: 8px;
+    padding: 1px 6px;
+    z-index: ; /* hints stay above all other elements */
+    position: absolute; /* allows proper formatting if hint is two lines */
+    display: none;
+}
+
+    .form_hint::before {
+        content: "\25C0";
+        color: #d45252;
+        position: absolute;
+        top: 1px;
+        left: -6px;
+    }
+</style>
 <form method="POST" action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'] . $_SERVER['QUERY_STRING']) ?>" id="contact_form">
 <input type="hidden" name="do" value="contact">
 <div style="position: relative; ">
@@ -47,7 +83,8 @@ if (isset($_SESSION['ctform']['error']) &&  $_SESSION['ctform']['error'] == true
 				<div class="form-group" style="text-align: center; width: 100%; max-width: 520px; margin-left: auto; margin-right: auto; " >
 			      		<div class="input-group pull-center" style="margin: auto; text-align: right; width: 100%; " >
 			                  	<label for="name" class="input-group-addon" style="cursor: pointer; text-align: right; font-size: 11px; min-width: 200px; " width="40%" >Nombre de Usuario : </label >
-                  				<input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" width="60%" required  />
+                  				<input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" width="60%"   />
+                                <span class="form_hint">El Nombre de Usuario no puede tener menos de 4 caracteres.</span>
 			                </div>
 			                <div class="text-danger">{{$errors->first('name')}}</div>
 			        </div>

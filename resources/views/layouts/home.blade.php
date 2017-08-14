@@ -101,8 +101,8 @@
 						              	<div class="form-group">
 						                	<div class="input-group" style="text-align: left; width: 100%; 
 		    padding-top:10px;">
-						                  		<img src="../public/imgs/payza.png" alt="" height="50" width="200" >&nbsp;&nbsp;
-						                  		<img src="../public/imgs/paypal.png" alt="" height="50" width="200">
+						                  		<img src="../public/imgs/payza.png" alt="" width="200" >&nbsp;&nbsp;
+						                  		<img src="../public/imgs/paypal.png" alt="" width="200">
 						                	</div>
 						              	</div>
               						</div>
