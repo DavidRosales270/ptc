@@ -107,8 +107,10 @@
             
             <div class="col-md-8">
                 <div class="menu-top">
-				    <button type="button" class="btn btn-success btn-sm">ascienda</button>	<button type="button" class="btn btn-success btn-sm">anunciese</button>	<button type="button" class="btn btn-success btn-sm">referidos</button>
-                    <button type="button" class="btn btn-primary btn-sm">su pago</button>
+                    <a href="{{ url('dashboard/ascend') }}"  class="btn btn-success btn-sm">ascienda</a>	
+                    <a href="{{ url('dashboard/announce') }}"  class="btn btn-success btn-sm">anunciese</a>	
+                    <button type="button" class="btn btn-success btn-sm">referidos</button>
+                    <button type="button" class="btn btn-primary btn-sm disabled">su pago</button>
                 </div>
                 <br />
                 <div class="box-item">

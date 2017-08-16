@@ -91,3 +91,7 @@ h2 {
     margin-bottom: 15px; 
     padding: 10px;
 }
+.alert { border-radius: 0; }
+.alert-danger, .alert-warning{
+    background-image: none !important;
+}

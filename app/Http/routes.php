@@ -177,3 +177,5 @@ Route::get('dashboard/banners', 'DashboardController@banners');
 Route::get('dashboard/user', 'DashboardController@user');
 Route::get('dashboard/historial', 'DashboardController@history');
 Route::get('dashboard/acceso', 'DashboardController@access');
+Route::get('dashboard/announce', 'DashboardController@announce');
+Route::get('dashboard/ascend', 'DashboardController@ascend');

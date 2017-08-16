@@ -41,5 +41,13 @@ class DashboardController extends Controller
         return view('dashboard/access');
     }
 
+    public function announce() {
+        return view('dashboard/announce');
+    }
+
+    public function ascend() {
+        return view('dashboard/ascend');
+    }
+
 }
 
