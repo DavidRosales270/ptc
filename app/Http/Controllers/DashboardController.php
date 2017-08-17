@@ -22,15 +22,23 @@ class DashboardController extends Controller
     }
 
     public function index() {
-       return view('dashboard/index');
+        $user = Auth::user();
+        $total_click =  DB::table('announces_users')->where('user_id', $user->id)->count();
+        $news = DB::table('news')->orderBy('created_at', 'desc')->get();
+        $logs = DB::table('logs')->orderBy('created', 'desc')->limit(5);
+
+       return view('dashboard/index', compact('user', 'total_click', 'news'));
     }
 
     public function user() {
-        return view('dashboard/user');
+        $user = Auth::user();
+        return view('dashboard/user', compact('user'));
     }
 
     public function banners(){
-        return view('dashboard/banners');
+        $user = Auth::user();
+        $url = Url('/');
+        return view('dashboard/banners', compact('user', 'url'));
     }
 
     public function history(){

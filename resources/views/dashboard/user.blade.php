@@ -30,7 +30,7 @@
                     <h2>Datos personales</h2>
                     <div class="input-group pull-center">
                         <label for="name" class="input-group-addon">Email : </label>
-                        <input type="text" name="name" id="name" class="form-control" value="" width="70%" required="">
+                        <input type="text" name="name" id="name" class="form-control" value="{{$user->email}}" width="70%" required="">
                     </div>
 
                     <br /><br />

@@ -37,7 +37,7 @@
                     <table style="width: 100%;">
                         <tr>
                             <td style="width: 20%"><p class="type-account">Estandard</p></td>
-                            <td style="width: 80%; text-align: right"><p>Desde: 2017/08/09 <a href=""><i class="glyphicon glyphicon-plus"></i></a></p></td>
+                            <td style="width: 80%; text-align: right"><p>Desde: {{ $user->created_at->format('Y/m/d') }} <a href=""><i class="glyphicon glyphicon-plus"></i></a></p></td>
                         </tr>
                     </table>
                 </div>
@@ -54,7 +54,7 @@
                     <table style="width: 100%;">
                         <tr>
                             <td style="width: 20%"><p class="type-account">Usted:</p></td>
-                            <td style="width: 80%; text-align: right"><p>22</p></td>
+                            <td style="width: 80%; text-align: right"><p>{{ $total_click }}</p></td>
                         </tr>
                         <tr>
                             <td style="width: 20%"><p class="type-account">Referidos:</p></td>
@@ -148,22 +148,19 @@
                     <hr  class="line-hr">
                 </div>
                     <table style="width:100%;" class="table" >
-                        <tr>
-                            <td><b>2017/08/09</b> </td>
-                            <td><a href="">Let the games begin!</a></td>
-                        </tr>
-                        <tr>
-                            <td><b>2017/08/09</b> </td>
-                            <td><a href="">Stripe verification for purchases</a></td>
-                        </tr>
-                        <tr>
-                            <td><b>2017/08/09</b> </td>
-                            <td><a href="">Update on TOS 5.1 regarding PayPal and a bonus</a></td>
-                        </tr>
-                        <tr>
-                            <td><b>2017/08/09</b> </td>
-                            <td><a href="">Express promotion</a></td>
-                        </tr>
+                        @if(count($news))
+                            @foreach($news as $new)
+                            <tr>
+                                <td><b>{{ $new->created->format(Y/m/d) }}</b> </td>
+                                <td><a href="">{{ $new->description }}</a></td>
+                            </tr>
+                            @endforeach
+                        @else
+                            <tr>
+                                <td> No hay Noticias aun. </td>
+                                
+                            </tr>
+                        @endif
                     </table>
             </div>
         </div>

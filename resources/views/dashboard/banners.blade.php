@@ -44,7 +44,7 @@
                             <tr>
                                 <td>
                                     <select class="form-control">
-                                        <option>username</option>
+                                        <option>{{ $user->name }}</option>
                                     </select>
                                 </td>
                                 <td>
@@ -62,29 +62,29 @@
                             <table class="table">
                             <tr>
                                 <td>Enlace: </td>
-                                <td><a href="">https://www.link.com/?r=dro27</a></td>
+                                <td><a href="">{{ $url. '/user/' . $user->name }}</a></td>
                                 
                             </tr>
                             <tr>
                                 <td>Banner: </td>
-                                <td><a href="">https://www.banner.com/imagens/banner1.gif</a></td>
+                                <td><a href="">{{ $url . '/public/banner/banner1.gif'}}</a></td>
                                 
                             </tr>
                             <tr>
                                 <td>HTML: </td>
-                                <td><textarea style="width:100%"><a href="https://www.link.com/?r=user"><img src="https://www.link.com/imagens/banner1.gif" width="468" height="60"></a></textarea>
+                                <td><textarea style="width:100%"><a href="{{ $url. '/user/' . $user->name }}"><img src="{{ $url . '/public/banner/banner1.gif'}}" width="468" height="60"></a></textarea>
                                 </td>
                                 
                             </tr>
                             <tr>
                                 <td>URL para fotos(1): </td>
-                                <td><textarea style="width:100%">[URL=https://www.link.com/?r=user][IMG]https://www.link.com/imagens/banner1.gif[/IMG][/URL]</textarea>
+                                <td><textarea style="width:100%">[URL={{ $url. '/user/' . $user->name }}][IMG]{{ $url . '/public/banner/banner1.gif'}}[/IMG][/URL]</textarea>
                                 </td>
                                 
                             </tr>
                             <tr>
                                 <td>URL para fotos(2): </td>
-                                <td><textarea style="width:100%">[URL=https://www.link.com/?r=user][IMG=https://www.link.com/imagens/banner1.gif][/URL]</textarea>
+                                <td><textarea style="width:100%">[URL={{ $url. '/user/' . $user->name }}][IMG={{ $url . '/public/banner/banner1.gif'}}][/URL]</textarea>
                                 </td>
                                 
                             </tr>
