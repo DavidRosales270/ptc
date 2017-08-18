@@ -101,7 +101,7 @@ if (isset($_SESSION['ctform']['error']) &&  $_SESSION['ctform']['error'] == true
 													<span class="form_hint">
 																			Introduzca su contraseña.
 																			<br><br>Únicamente puede contener letras y números y su longitud tiene que ser de entre 4 a 100 caracteres.
-																			<br><br>Con esta contraseña podrá acceder a su cuenta de NeoBux así que manténgala en secreto y en un lugar seguro.
+																			<br><br>Con esta contraseña podrá acceder a su cuenta de Niulinx así que manténgala en secreto y en un lugar seguro.
 																			<br><br>Como medida de seguridad, su contraseña será cifrada al almacenarla en nuestra base de datos, por lo tanto, ni siquiera nosotros podremos saber cuál es.
 																			<br><br>Si es un usuario registrado de otros sitios, le recomendamos que aquí utilice una contraseña diferente.
 																</span>
@@ -124,7 +124,7 @@ if (isset($_SESSION['ctform']['error']) &&  $_SESSION['ctform']['error'] == true
 			                  	<label for="email" class="input-group-addon" style="cursor: pointer; text-align: right; font-size: 11px; min-width: 200px; " width="40%" >Email : </label>
                   				<input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}" width="60%"   />
 													<span class="form_hint">
-													Introduzca su dirección personal de correo electrónico.<br><br>Esta dirección de correo únicamente será utilizada por NeoBux. Solo la usaremos para enviarle noticias de actualizaciones, reportes y otra información importante así como para recuperar su contraseña, notificaciones del foro y respuestas del soporte.<br><br>Esta dirección de correo electrónico nunca será mostrada, ofrecida o vendida.<br>Únicamente es la forma en la que nos comunicaremos con usted.
+													Introduzca su dirección personal de correo electrónico.<br><br>Esta dirección de correo únicamente será utilizada por Niulinx. Solo la usaremos para enviarle noticias de actualizaciones, reportes y otra información importante así como para recuperar su contraseña, notificaciones del foro y respuestas del soporte.<br><br>Esta dirección de correo electrónico nunca será mostrada, ofrecida o vendida.<br>Únicamente es la forma en la que nos comunicaremos con usted.
 													</span>
 			                </div>
 			                <div class="text-danger">{{$errors->first('email')}}</div>
@@ -188,7 +188,7 @@ if (isset($_SESSION['ctform']['error']) &&  $_SESSION['ctform']['error'] == true
                   		</div>
                   		<div class="form-inline" style="text-align: center; ">
 			      		<div class="checkbox" style="font-size: 11px;">
-			     			<label><input type="checkbox" value=""  >Declaro haber leido, comprendido <br />y aceptado los <a href="#">Términos de servicio</a>.</label>
+			     			<label><input type="checkbox" value=""  >Declaro haber leido, comprendido <br />y aceptado los <a href="{{ url('terminos') }}">Términos de servicio</a>.</label>
                   			</div>
 			     		<button type="submit" class="btn btn-danger" style="min-width: 150px; margin-left: 8px; margin-right: 8px; font-size: 11px;">Enviar</button>
                   		</div>

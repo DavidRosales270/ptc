@@ -188,7 +188,7 @@ window.onload = function() {
 				type: "line",
 				dataPoints: [
 
-                  @for($i=0; $i< 5; $i++)
+                  @for($i=0; $i< 10; $i++)
 
 				  { y: {{ $graph[$i]['total'] }}, toolTipContent: '{{ $graph[$i]['label'] }} '},
                   @endfor

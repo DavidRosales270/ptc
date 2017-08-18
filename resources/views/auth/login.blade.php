@@ -36,7 +36,8 @@ if (isset($_SESSION['ctform']['error']) &&  $_SESSION['ctform']['error'] == true
 
 
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'] . $_SERVER['QUERY_STRING']) ?>" id="contact_form">
+
+<form class='form' method="post" action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'] . $_SERVER['QUERY_STRING']) ?>" id="contact_form">
 <input type="hidden" name="do" value="contact">
 	<div style="display: inline-block; vertical-align: middle; width: 100%; ">
 	{!! csrf_field() !!}
@@ -289,7 +290,7 @@ function process_si_contact_form()
 
 $_SESSION['ctform']['success'] = false; // clear success value after running
 ?>
-	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	
 	<script type="text/javascript" src="../public/js/keyboard.js"></script>
 	<script type="text/javascript">
 		var $write = $('#password'), 

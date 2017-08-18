@@ -5,15 +5,15 @@
 	<meta name="description" content="">
 	<meta name="author" content="Mario Palacios">
 	<title>Gana dinero</title>
-	
+	<link rel="stylesheet" href="../public/css/global.css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 	
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	
 	<style>
 		@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
@@ -53,7 +53,7 @@
 	</style> 
 </head>
 
-<body style="background-color: #eFeFeF; " onload="FillCombo();">
+<body style="background-color: #eFeFeF; " >
 	<div class="container" style="margin: 0; padding: 0; width: 100%; font-size:11px; ">
 		<header class="row" style="margin: 0; padding: 0; width: 100%; background-color: #FFF; padding-top: 12px; padding-bottom: 12px;">
 			<div class="row" style="margin: 0; padding: 0; width: 100%;">
@@ -134,6 +134,8 @@
         		</div>
       		</div>
     	</footer>
-    	</div>
+		</div>
+		
+		
 </body>
 </html>

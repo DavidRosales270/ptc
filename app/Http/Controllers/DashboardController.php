@@ -63,10 +63,10 @@ class DashboardController extends Controller
         
         $data = array();
 
-        for($i=0; $i<= 4;$i++){
+        for($i=0; $i<= 9;$i++){
             $date = new \DateTime();
 
-            $date_search = $i - 2;
+            $date_search = $i - 4;
             
             if($date_search>=0) {
                 $date_search = '+' . $date_search;
