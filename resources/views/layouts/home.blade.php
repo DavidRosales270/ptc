@@ -99,8 +99,7 @@
             					<div class="col-sm-12 col-md-12">
               						<div id="meta-4" class="widget widgetFooter widget_meta">
 						              	<div class="form-group">
-						                	<div class="input-group" style="text-align: left; width: 100%; 
-		    padding-top:10px;">
+						                	<div class="input-group" style="text-align: left; width: 100%; padding-top:10px;">
 						                  		<img src="../public/imgs/payza.png" alt="" width="200" >&nbsp;&nbsp;
 						                  		<img src="../public/imgs/paypal.png" alt="" width="200">
 						                	</div>
@@ -126,7 +125,7 @@
 						                	<div class="input-group" style="text-align: right; width: 100%; ">
 						                		<a href="../terminos" class="btn btn-danger" style="font-size: 11px; margin-right: 4px; ">Términos de servicio</a>
 						                  		<a href="../politica" class="btn btn-danger" style="font-size: 11px; margin-right: 4px; ">Política de privacidad</a>
-						                  		<a href="../ayuda" class="btn btn-danger" style="font-size: 11px; ">Ayuda</a>
+						                  		<a href="http://support.niulinx.com/" class="btn btn-danger" style="font-size: 11px; ">Ayuda</a>
 						                	</div>
 						              	</div>
               						</div>
