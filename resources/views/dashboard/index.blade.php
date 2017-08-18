@@ -180,7 +180,6 @@
 window.onload = function() {
 		var chart = new CanvasJS.Chart("chartContainer", {
 			title: {
-				text: "Line Chart"
 			},
 			axisX: {
 				interval: 10
@@ -188,16 +187,11 @@ window.onload = function() {
 			data: [{
 				type: "line",
 				dataPoints: [
-				  { x: 10, y: 45 },
-				  { x: 20, y: 14 },
-				  { x: 30, y: 20 },
-				  { x: 40, y: 60 },
-				  { x: 50, y: 50 },
-				  { x: 60, y: 80 },
-				  { x: 70, y: 40 },
-				  { x: 80, y: 60 },
-				  { x: 90, y: 10 },
-				  { x: 100, y: 50 }
+
+                  @for($i=0; $i< 5; $i++)
+
+				  { y: {{ $graph[$i]['total'] }}, toolTipContent: '{{ $graph[$i]['label'] }} '},
+                  @endfor
 				]
 			}]
 		});
@@ -205,5 +199,9 @@ window.onload = function() {
 	}
 
 </script>
+
+<style>
+.canvasjs-chart-credit { display: none}
+</style>
 
 @stop

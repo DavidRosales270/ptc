@@ -26,8 +26,10 @@ class DashboardController extends Controller
         $total_click =  DB::table('announces_users')->where('user_id', $user->id)->count();
         $news = DB::table('news')->orderBy('created_at', 'desc')->get();
         $logs = DB::table('logs')->orderBy('created', 'desc')->limit(5);
+        $graph = $this->fillChart();
 
-       return view('dashboard/index', compact('user', 'total_click', 'news'));
+
+       return view('dashboard/index', compact('user', 'total_click', 'news', 'graph'));
     }
 
     public function user() {
@@ -57,5 +59,30 @@ class DashboardController extends Controller
         return view('dashboard/ascend');
     }
 
+    private function fillChart(){
+        
+        $data = array();
+
+        for($i=0; $i<= 4;$i++){
+            $date = new \DateTime();
+
+            $date_search = $i - 2;
+            
+            if($date_search>=0) {
+                $date_search = '+' . $date_search;
+            }
+            $date->modify($date_search . "day");
+            
+            $total = DB::table('announces_users')->where('created_at','like', $date->format('Y-m-d').'%')->count();
+
+            $point = array( 'total' => $total, 'label' => $date->format('Y/m/d') . ':' . $total . ' clics' );
+
+            array_push($data, $point);
+        }
+        
+        return $data;
+    }
+
 }
 
+ 
