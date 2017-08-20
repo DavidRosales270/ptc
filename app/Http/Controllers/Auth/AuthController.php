@@ -200,7 +200,18 @@ class AuthController extends Controller
                 ]
                 , $request->has('remember')
                 )){
+                    $user = Auth::user();
+                    DB::table('logs')->insert(
+				        [
+					'status' => 'Correcto',
+					'ip' => $_SERVER['REMOTE_ADDR'],
+                    'user_id' => $user->id,
+					'created_at' => new \DateTime()
+				    ]);
+
             return redirect()->intended($this->redirectPath());
+
+
         }
         else{
             $rules = [

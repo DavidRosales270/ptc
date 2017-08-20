@@ -175,6 +175,7 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 Route::get('dashboard', 'DashboardController@index');
 Route::get('dashboard/banners', 'DashboardController@banners');
 Route::get('dashboard/user', 'DashboardController@user');
+Route::post('dashboard/update','DashboardController@update');
 Route::get('dashboard/historial', 'DashboardController@history');
 Route::get('dashboard/acceso', 'DashboardController@access');
 Route::get('dashboard/announce', 'DashboardController@announce');

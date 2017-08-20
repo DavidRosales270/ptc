@@ -14,7 +14,13 @@ class AnunController extends Controller
 	public function visanun($id)
     	{
     		$url = DB::table('anuncios')->where('id', $id)->pluck('url');
-			$user = Auth::user();
+			$id = Auth::user()->id;
+
+			$user = User::find($id);
+
+			print $user->amount = $user->amount + '0.0001';
+
+			$user->save();
 
 			DB::table('announces_users')->insert(
 				[
@@ -24,8 +30,8 @@ class AnunController extends Controller
 				]);
 
 			
-    		return redirect('cashanuncio')
-			->with('urlan', $url);
+    		/*return redirect('cashanuncio')
+			->with('urlan', $url);*/
     	}
     	
     	public function gettip()

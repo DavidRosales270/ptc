@@ -15,6 +15,7 @@ class DashboardController extends Controller
 {
 
     use AuthenticatesAndRegistersUsers;
+    
 
     public function __construct()
     {
@@ -25,7 +26,7 @@ class DashboardController extends Controller
         $user = Auth::user();
         $total_click =  DB::table('announces_users')->where('user_id', $user->id)->count();
         $news = DB::table('news')->orderBy('created_at', 'desc')->get();
-        $logs = DB::table('logs')->orderBy('created', 'desc')->limit(5);
+        
         $graph = $this->fillChart();
 
 
@@ -35,6 +36,34 @@ class DashboardController extends Controller
     public function user() {
         $user = Auth::user();
         return view('dashboard/user', compact('user'));
+    }
+
+    public function update(Request $request){ 
+        $id = Auth::user()->id;
+        
+        $user = User::find($id);
+
+        print_r($user);
+
+        if(isset($request->email) && !empty($request->email))
+        {
+            $user->email = $request->email;
+        }
+
+        if(isset($request->password) && !empty($request->password)){
+
+            if($request->password == $request->confirm_password){
+                $user->password = bcrypt($request->password);
+            }else {
+                return redirect('dashboard/user')
+                ->withErrors('Password no coinciden');
+            }
+        }
+
+        $user->save();
+         
+         return redirect('dashboard/user')
+            ->withSuccess('Sus Datos fueron actualizados');
     }
 
     public function banners(){
@@ -48,7 +77,11 @@ class DashboardController extends Controller
     }
     
     public function access(){
-        return view('dashboard/access');
+        $user = Auth::user();
+        $logs = DB::table('logs')->where('user_id', $user->id)->get();
+        return view('dashboard/access', compact('logs'));
+
+        
     }
 
     public function announce() {

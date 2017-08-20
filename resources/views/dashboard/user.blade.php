@@ -1,19 +1,11 @@
 @extends('layouts.home')
 @section('content')
-<div class="text-info">
-    	@if(Session::has('message'))
-        	{{Session::get('message')}}
-    	@endif
-    	
-    	@if(Session::has('status'))
-        	{{Session::get('status')}}
-    	@endif
-</div>
+
 <link rel="stylesheet" type="text/css" href="../public/css/dashboard.css">
 <link rel="stylesheet" type="text/css" href="../public/css/bootstrap-switch.css">
 
+<form class='form' method="post" action="{{ url('dashboard/update') }}">
 
-<form class='form' method="post" >
     {!! csrf_field() !!}
     <div style="position: relative;  margin: 0; padding: 0; ">
         <div style="display: inline-block; vertical-align: middle; width: 100%;  margin: 0; padding: 10px; ">
@@ -28,11 +20,13 @@
                     <hr  class="line-hr">
                 </div>
                 <div class="user-form">
-                    <form>
+
+                @include('partials.messages')
+                
                         <h2>Datos personales</h2>
                         <div class="input-group pull-center">
                             <label for="name" class="input-group-addon">Email : </label>
-                            <input type="text" name="name" id="name" class="form-control" value="{{$user->email}}" width="70%" required>
+                            <input type="email" name="email" id="email" class="form-control" value="{{$user->email}}" width="70%">
                             <span class="form_hint">
                             Los cambios de correo o Identificador serán efectuados tras 48 horas.
                             </span>
@@ -41,7 +35,7 @@
                         <br /><br />
                         <div class="input-group pull-center">
                             <label for="name" class="input-group-addon" width="30%">Contraseña : </label>
-                            <input type="password" name="name" id="name" class="form-control" value="" width="70%" required>
+                            <input type="password" name="password" id="password" class="form-control" value="" width="70%" >
                             <span class="form_hint">
                             Dejelo en blanco si no desea cambiarlo.
                             </span>
@@ -49,7 +43,7 @@
                         <br />
                         <div class="input-group pull-center">
                             <label for="name" class="input-group-addon" width="30%">Confirmación de Contraseña : </label>
-                            <input type="password" name="name" id="name" class="form-control" value="" width="70%" required="">
+                            <input type="password" name="confirm_password" id="confirm_password" class="form-control" value="" width="70%">
                         </div>
 
                         <br />
@@ -92,16 +86,15 @@
                         <h2>Confirmación de Contraseña</h2>
                         <div class="input-group pull-center">
                             <label for="name" class="input-group-addon" width="30%">Contraseña Principal : </label>
-                            <input type="password" name="name" id="name" class="form-control" value="" width="70%" required="">
+                            <input type="password" name="name" id="name" class="form-control" value="" width="70%" >
                             <span class="form_hint">
                             Introduzca su Contraseña Principal
                             </span>
                         </div>
                         <br /><br />
                         <hr class="line-hr"/>
-                        <input type="button" class="btn btn-danger" style="font-size: 11px; margin: 0 auto; " name="send" value="Guardar Cambios">
-                
-                    </form>
+                        <input type="submit" class="btn btn-danger" style="font-size: 11px; margin: 0 auto; " name="send" value="Guardar Cambios">
+              
                 </div>
             </div>
         </div>

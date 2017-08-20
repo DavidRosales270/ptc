@@ -15,7 +15,9 @@ class Logs extends Migration
         if (!Schema::hasTable('logs')) {
             Schema::create('logs', function (Blueprint $table) {
                 $table->increments('id');
-                $table->integer('description');
+                $table->string('status');
+                $table->integer('user_id');
+                $table->string('ip');
                 $table->timestamps();
             });
         }
