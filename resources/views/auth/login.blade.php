@@ -55,14 +55,20 @@ if (isset($_SESSION['ctform']['error']) &&  $_SESSION['ctform']['error'] == true
 				<div class="form-group" style="text-align: center; width: 100%; max-width: 520px; " >
 					<div class="input-group pull-center" style="margin: auto; text-align: right; width: 100%; " >
 						<label for="name" class="input-group-addon" style="cursor: pointer; text-align: right; font-size: 11px; min-width: 150px; " width="40%" >Nombre de Usuario : </label >
-                  				<input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" width="60%" required  />
+                  				<input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" width="60%"   />
+						<span class="form_hint">
+								Por favor ingrese su nombre de usuario.
+					</span>
 			     		</div>
 			        	<div class="text-danger">{{$errors->first('name')}}</div>
 				</div>
 				<div class="form-group" style="text-align: center; width: 100%; max-width: 520px; " >
 			      		<div class="input-group pull-center" style="margin: auto; text-align: right; width: 100%; " >
 			       		<label for="password" class="input-group-addon" style="cursor: pointer; text-align: right; font-size: 11px; min-width: 150px; " width="40%" >Contraseña : </label >
-                  			<input type="password" name="password" id="password" class="form-control" value="{{ old('password') }}" width="60%" required  />
+                  			<input type="password" name="password" id="password" class="form-control" value="{{ old('password') }}" width="60%"   />
+							<span class="form_hint">
+								Por favor ingrese su contraseña.
+					</span>
 			        	</div>
 			        	<div class="text-danger">{{$errors->first('password')}}</div>
 			    	</div>
