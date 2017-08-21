@@ -23,9 +23,7 @@ Route::get('/', 'HomeController@load');
 Route::get('home', function () {
 	if (Auth::check() && Auth::user()->name == "admin")
 	{
-		$tiposanuncios = DB::select('select * from tiposanuncios where estado= ?', [1]);
-	    	return redirect('admin/config')
-	    		->with('resultado', $tiposanuncios);
+    	return view('admin/index');
 	}
 	else
 	{
@@ -64,9 +62,7 @@ Route::get('admin/editta', function() {
 	return view('panel/admin/editta');
 });
 
-Route::get('anuncios', function() {
-    	return view('panel/anuncios');
-});
+Route::get('anuncios', 'AnunController@index');
 
 Route::get('foro', function() {
 	return view('extras/foro');
@@ -87,9 +83,7 @@ Route::get('ayuda', function() {
 Route::get('admin/config', function() {
 	if (Auth::check() && Auth::user()->name == "admin")
 	{
-		$tiposanuncios = DB::select('select * from tiposanuncios where estado= ?', [1]);
-		Session::put('resultado', $tiposanuncios );
-		return view('panel/admin/config');
+		return view('admin/index');
 	}
 	else
 	{
@@ -153,9 +147,6 @@ Route::get('cashanuncio', function() {
 	return view('panel/anuncio');
 });
 
-/*Route::get('prueba', function () {
-    return 'Hello World';
-});*/
 
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
@@ -180,3 +171,59 @@ Route::get('dashboard/historial', 'DashboardController@history');
 Route::get('dashboard/acceso', 'DashboardController@access');
 Route::get('dashboard/announce', 'DashboardController@announce');
 Route::get('dashboard/ascend', 'DashboardController@ascend');
+
+
+/****** Dashboard Admin ****/
+
+/****** User ***/
+Route::get('admin/user', [
+    'as' => 'admin.user',
+    'uses' => 'AdminUserController@index'
+]);
+Route::get('admin/user/add', [
+    'as' => 'admin.user.add',
+    'uses' => 'AdminUserController@add'
+]);
+Route::get('admin/user/edit', [
+    'as' => 'admin.user.edit',
+    'uses' => 'AdminUserController@edit'
+]);
+
+Route::delete('admin/user/{user}/delete', [
+    'as' => 'admin.user.delete',
+    'uses' => 'AdminUserController@delete'
+]);
+
+
+Route::get('admin/edit/{user}/edit', [
+    'as' => 'admin.user.edit',
+    'uses' => 'AdminUserController@edit'
+]);
+
+/****** Anounces ***/
+
+Route::get('admin/announce', [
+    'as' => 'admin.announce',
+    'uses' => 'AdminAnnounceController@index'
+]);
+
+Route::get('admin/announce/add', [
+    'as' => 'admin.announce.add',
+    'uses' => 'AdminAnnounceController@add'
+]);
+Route::post('admin/announce/store', [
+    'as' => 'admin.announce.store',
+    'uses' => 'AdminAnnounceController@store'
+]);
+Route::get('admin/announce/edit', [
+    'as' => 'admin.announce.edit',
+    'uses' => 'AdminAnnounceController@edit'
+]);
+
+Route::delete('admin/announce/{announce}/delete', [
+    'as' => 'admin.announce.delete',
+    'uses' => 'AdminAnnounceController@delete'
+]);
+
+
+

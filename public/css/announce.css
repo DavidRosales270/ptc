@@ -1,0 +1,52 @@
+.announces{
+    padding: 10px;
+
+}
+.announce_content{
+    padding: 10px 0px 10px 4px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+.announce {
+    cursor: pointer;
+    width: 160px;
+    height: 90px;
+    display: inline-table;
+    border: 1px solid gray;
+    margin: 2px;
+    background-color: #EAEAEA;
+}
+.announce:hover{
+    background-color: ivory;
+    border: 1px solid red;
+}
+
+.announce .announce-head{
+    font-size: 12px;
+    width: 170px;
+    height: 30px;
+    background-color: green;
+    margin: 0;
+    padding: 3px;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.announce .announce-body {
+    font-size: 11px;
+    width: 160px;
+    height: 60px;
+    margin: 0;
+    padding: 3px;
+    color: #5C5C5C;
+    position: absolute;
+}
+
+.announce_disabled{
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+

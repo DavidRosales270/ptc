@@ -22,9 +22,11 @@ class HomeController extends Controller
 	{
 		if (Auth::check() && Auth::user()->name == "admin")
 		{
-	    		$tiposanuncios = DB::select('select * from tiposanuncios where estado= ?', [1]);
+	    		/*$tiposanuncios = DB::select('select * from tiposanuncios where estado= ?', [1]);
 	    		return redirect('admin/config')
-	    			->with('resultado', $tiposanuncios );
+	    			->with('resultado', $tiposanuncios );*/
+
+	    		return redirect('admin/index');
 	    	}
 		else
 		{

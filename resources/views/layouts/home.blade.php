@@ -11,46 +11,12 @@
 	
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+	@yield('styles')
+
 	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	
-	<style>
-		@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
-
-		#footer {
-		    background: url(/public/imgs/footer.png) no-repeat center center ;  
-		    -webkit-background-size: 100% 100%; 
-		    -moz-background-size: 100% 100%; 
-		    -o-background-size: 100% 100%; 
-		    background-size: 100% 100%;
-		    padding-top: 30px;
-		    margin-top: 60px;
-		    clear: both;
-		    color: #AAA;
-		    display: block;
-		}
-
-		#footer .widgettitle {
-		    margin: 0px;
-		    padding: 0px 0px 15px;
-		    border-bottom: medium none;
-		}
-		
-		#footer h4 {
-		    color: #FFF;
-		}
-		
-		#footer ul {
-		    list-style: outside none none;
-		}
-		
-		#footer li {
-		    padding: 7px 0px;
-		    border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
-		    margin: 0px;
-		}
-	</style> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 
 <body style="background-color: #eFeFeF; " >
@@ -135,7 +101,7 @@
       		</div>
     	</footer>
 		</div>
-		
-		
+
+	@yield('scripts')
 </body>
 </html>

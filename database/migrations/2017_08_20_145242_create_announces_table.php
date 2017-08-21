@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AnnouncesUser extends Migration
+class CreateAnnouncesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,15 @@ class AnnouncesUser extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('announces_users')) {
-            Schema::create('announces_users', function (Blueprint $table) {
+        if (!Schema::hasTable('announces')) {
+            Schema::create('announces', function (Blueprint $table) {
                 $table->increments('id');
-                $table->integer('announce_id');
-                $table->integer('user_id');
+                $table->string('title');
+                $table->string('description');
+                $table->string('url');
+                $table->date('date_show');
+                $table->integer('type_announce');
+                $table->float('price');
                 $table->timestamps();
             });
         }

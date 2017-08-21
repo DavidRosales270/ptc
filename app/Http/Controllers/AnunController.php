@@ -7,31 +7,42 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Auth; 
+use Auth;
+use App\Announce;
 
 class AnunController extends Controller
 {
+    public function index() {
+
+        $tipos_anuncios = DB::table('tiposanuncios')->get();
+
+        return view('announce/index', compact('tipos_anuncios'));
+
+    }
+
+
 	public function visanun($id)
     	{
-    		$url = DB::table('anuncios')->where('id', $id)->pluck('url');
+    	    $announce = Announce::find($id);
+
 			$id = Auth::user()->id;
 
 			$user = User::find($id);
 
-			print $user->amount = $user->amount + '0.0001';
+			$user->amount = $user->amount + $announce->price;
 
 			$user->save();
 
 			DB::table('announces_users')->insert(
 				[
-					'anuncio_id' => $id,
+					'announce_id' => $announce->id,
 					'user_id' => $user->id,
 					'created_at' => new \DateTime()
 				]);
 
 			
-    		/*return redirect('cashanuncio')
-			->with('urlan', $url);*/
+    		return redirect('cashanuncio')
+			->with('urlan', $announce->url);
     	}
     	
     	public function gettip()
