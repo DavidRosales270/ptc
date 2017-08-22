@@ -5,11 +5,10 @@
 	<meta name="description" content="">
 	<meta name="author" content="Mario Palacios">
 	<title>Gana dinero</title>
-	<link rel="stylesheet" href="../public/css/global.css">
-	<!-- Latest compiled and minified CSS -->
+
+
+	{!! HTML::style('public/css/global.css') !!}
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	
-	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 
@@ -101,7 +100,7 @@
       		</div>
     	</footer>
 		</div>
-	@include('Forum::Broadcasting.index');
+
 	@yield('scripts')
 </body>
 </html>

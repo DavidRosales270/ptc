@@ -4,7 +4,7 @@ return [
     /*
      * Define the path to your master view on your "resources/view" folder.
      */
-    'template' => 'layouts/home',
+    'template' => 'layouts/forum',
 
     /*
      * Define @yield( $content ) area where the forum views will be displayed on your app.
