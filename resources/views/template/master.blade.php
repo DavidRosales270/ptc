@@ -28,20 +28,20 @@
 				</div>
 				<div class="col-sm-6 col-md-6" style="text-align: center; padding-top: 20px; padding-right: 20px;  ">
 					@if (!Auth::check() || Auth::user()->name != "admin")
-						<a href="{{url('anuncios')}}" class="btn btn-danger" style="font-size: 11px; ">Ver Anuncios</a>
+						<a href="../anuncios" class="btn btn-danger" style="font-size: 11px; ">Ver Anuncios</a>
 					@else
 					@endif
-					<a href="{{url('forum')}}" class="btn btn-danger" style="font-size: 11px; ">Foro</a>
+					<a href="../foro" class="btn btn-danger" style="font-size: 11px; ">Foro</a>
 					
 					@if (Auth::check())
 						@if (Auth::user()->name == "admin")
-							<a href="{{url('admin')}}" class="btn btn-danger" style="font-size:11px; ">Configuración</a>
+							<a href="../admin/config" class="btn btn-danger" style="font-size:11px; ">Configuración</a>
 						@else							
 						@endif
-						<a href="{{url('auth/logout')}}" class="btn btn-danger" style="font-size:11px; ">Cerrar Sesión</a>
+						<a href="../auth/logout" class="btn btn-danger" style="font-size:11px; ">Cerrar Sesión</a>
 					@else
-						<a href="{{url('auth/register')}}" class="btn btn-danger" style="font-size:11px; ">Registrese</a>
-						<a href="{{url('auth/login')}}" class="btn btn-danger" style="font-size: 11px; ">Iniciar Sesión</a>
+						<a href="../auth/register" class="btn btn-danger" style="font-size:11px; ">Registrese</a>
+						<a href="../auth/login" class="btn btn-danger" style="font-size: 11px; ">Iniciar Sesión</a>
 					@endif
 				</div>
 			</div>
@@ -101,7 +101,7 @@
       		</div>
     	</footer>
 		</div>
-	@include('Forum::Broadcasting.index');
+
 	@yield('scripts')
 </body>
 </html>
