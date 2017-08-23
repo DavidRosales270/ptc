@@ -1,3 +1,14 @@
+h2 {
+  font-size: 14px;
+  color: #e10019;
+  font-weight: bold;
+  border-bottom: 1px solid #B7B7B7;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+.main{
+  width: 90%; margin: 20px auto;
+}
 .forum {
   color: rgba(0, 0, 0, 0.6);
 }
@@ -7,6 +18,7 @@
   border-color: rgba(31, 48, 103, 0.8);
   font-weight: bold;
   border-radius: 5px;
+
 }
 
 .forum .header .modal {
@@ -152,7 +164,7 @@
 }
 
 .forum .body .items .item .bubble .header {
-  padding: 20px 30px;
+  padding: 12px 30px;
   border-bottom: 1px solid #CCCCCC;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -180,10 +192,10 @@
 }
 
 .forum .body .items .item .bubble .question {
-  padding: 30px 40px;
-  border: 1px solid rgba(49, 75, 161, 0.8);
+  padding: 12px 40px;
+
   border-bottom: 0px;
-  background: rgba(55, 84, 181, 0.8) !important;
+  background: #e10019;
 }
 
 .forum .body .items .item .bubble .question .avatar {
@@ -340,12 +352,21 @@
   padding: 0px;
   text-align: left;
 }
-
+.forum .body .topics ul a:nth-child(1) li span,
+.forum .body .topics ul a:nth-child(1) li span:hover{
+  background: #e10019;
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
 .forum .body .topics ul li span {
   float: left;
-  padding: 5px 10px 10px 5px;
+  padding: 10px 15px;
   width: 100% !important;
-  font-weight: bold;
+  border: 1px solid #ecf0f1;
+  background: #fff;
+  font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #555;
 }
 
 .forum .body .topics ul li span i {
@@ -354,12 +375,11 @@
   margin-right: 10px;
   padding: 10px;
   border-radius: 50px;
+  display: none;
 }
 
 .forum .body .topics ul li span:hover {
-  background: #fdfdfd !important;
-  border: 1px solid rgba(201, 210, 239, 0.8);
-  border-radius: 5px;
+  background: #ecf0f1;
 }
 
 .forum .pagination {
