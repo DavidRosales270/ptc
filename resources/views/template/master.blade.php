@@ -5,10 +5,11 @@
 	<meta name="description" content="">
 	<meta name="author" content="Mario Palacios">
 	<title>Gana dinero</title>
-
-
-	{!! HTML::style('public/css/global.css') !!}
+	<link rel="stylesheet" href="../public/css/global.css">
+	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 
@@ -27,20 +28,20 @@
 				</div>
 				<div class="col-sm-6 col-md-6" style="text-align: center; padding-top: 20px; padding-right: 20px;  ">
 					@if (!Auth::check() || Auth::user()->name != "admin")
-						<a href="{{url('anuncios')}}" class="btn btn-danger" style="font-size: 11px; ">Ver Anuncios</a>
+						<a href="../anuncios" class="btn btn-danger" style="font-size: 11px; ">Ver Anuncios</a>
 					@else
 					@endif
-					<a href="{{url('forum')}}" class="btn btn-danger" style="font-size: 11px; ">Foro</a>
+					<a href="../foro" class="btn btn-danger" style="font-size: 11px; ">Foro</a>
 					
 					@if (Auth::check())
 						@if (Auth::user()->name == "admin")
-							<a href="{{url('admin')}}" class="btn btn-danger" style="font-size:11px; ">Configuración</a>
+							<a href="../admin/config" class="btn btn-danger" style="font-size:11px; ">Configuración</a>
 						@else							
 						@endif
-						<a href="{{url('auth/logout')}}" class="btn btn-danger" style="font-size:11px; ">Cerrar Sesión</a>
+						<a href="../auth/logout" class="btn btn-danger" style="font-size:11px; ">Cerrar Sesión</a>
 					@else
-						<a href="{{url('auth/register')}}" class="btn btn-danger" style="font-size:11px; ">Registrese</a>
-						<a href="{{url('auth/login')}}" class="btn btn-danger" style="font-size: 11px; ">Iniciar Sesión</a>
+						<a href="../auth/register" class="btn btn-danger" style="font-size:11px; ">Registrese</a>
+						<a href="../auth/login" class="btn btn-danger" style="font-size: 11px; ">Iniciar Sesión</a>
 					@endif
 				</div>
 			</div>

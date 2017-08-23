@@ -52,7 +52,9 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
+
+
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +67,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -119,7 +121,7 @@ return [
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
         Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
-        Illuminate\Routing\ControllerServiceProvider::class,
+
         Illuminate\Cookie\CookieServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Encryption\EncryptionServiceProvider::class,
@@ -146,6 +148,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         App\Providers\HtmlServiceProvider::class,
+
+        Socieboy\Forum\Providers\ForumServiceProvider::class,
 
     ],
 
