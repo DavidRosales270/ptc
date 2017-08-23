@@ -74,7 +74,7 @@
                     <table style="width: 100%;">
                         <tr>
                             <td style="width: 50%"><p class="type-account">Saldo principal</p></td>
-                            <td style="width: 50%; text-align: right"><p>$ 0.0026 <a href=""><i class="glyphicon glyphicon-plus"></i></a></p></td>
+                            <td style="width: 50%; text-align: right"><p>$ {{ $user->amount }} <a href=""><i class="glyphicon glyphicon-plus"></i></a></p></td>
                         </tr>
                         <tr>
                             <td style="width: 50%"><p class="type-account">Saldo Alquiler</p></td>
@@ -95,7 +95,7 @@
                     <table style="width: 100%;">
                         <tr>
                             <td style="width: 50%"><p class="type-account">Points</p></td>
-                            <td style="width: 50%; text-align: right"><p>22 </p></td>
+                            <td style="width: 50%; text-align: right"><p>0 </p></td>
                         </tr>
                         
                         

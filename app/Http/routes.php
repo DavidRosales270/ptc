@@ -86,18 +86,18 @@ Route::get('cashanuncio', function() {
 });
 
 
-    Route::get('auth/register', 'Auth\AuthController@getRegister');
-    Route::post('auth/register', 'Auth\AuthController@postRegister');
-    Route::get('auth/confirm/email/{email}/confirm_token/{confirm_token}', 'Auth\AuthController@confirmRegister');
-    Route::get('auth/login', 'Auth\AuthController@getLogin');
-    Route::post('auth/login', 'Auth\AuthController@postLogin');
-    Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('auth/confirm/email/{email}/confirm_token/{confirm_token}', 'Auth\AuthController@confirmRegister');
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-    Route::get('password/email', 'Auth\PasswordController@getEmail');
-    Route::post('password/email', 'Auth\PasswordController@postEmail');
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
 
-    Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
-    Route::post('password/reset', 'Auth\PasswordController@postReset');
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 
 
@@ -117,6 +117,10 @@ Route::get('dashboard/ascend', 'DashboardController@ascend');
 
 
 /****** Dashboard Admin ****/
+    Route::get('admin/index', [
+        'as' => 'admin.index',
+        'uses' => 'HomeController@admin'
+    ]);
 
 /****** User ***/
 Route::get('admin/user', [
@@ -126,6 +130,10 @@ Route::get('admin/user', [
 Route::get('admin/user/add', [
     'as' => 'admin.user.add',
     'uses' => 'AdminUserController@add'
+]);
+Route::post('admin/user/store', [
+    'as' => 'admin.user.store',
+    'uses' => 'AdminUserController@store'
 ]);
 Route::get('admin/user/edit', [
     'as' => 'admin.user.edit',
@@ -142,6 +150,12 @@ Route::get('admin/edit/{user}/edit', [
     'as' => 'admin.user.edit',
     'uses' => 'AdminUserController@edit'
 ]);
+Route::post('admin/user/update', [
+    'as' => 'admin.user.update',
+    'uses' => 'AdminUserController@update'
+]);
+
+
 
 /****** Anounces ***/
 

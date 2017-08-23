@@ -37,10 +37,6 @@
 					<a href="../foro" class="btn btn-danger" style="font-size: 11px; ">Foro</a>
 					
 					@if (Auth::check())
-						@if (Auth::user()->name == "admin")
-							<a href="../admin/config" class="btn btn-danger" style="font-size:11px; ">Configuración</a>
-						@else							
-						@endif
 						<a href="../auth/logout" class="btn btn-danger" style="font-size:11px; ">Cerrar Sesión</a>
 					@else
 						<a href="../auth/register" class="btn btn-danger" style="font-size:11px; ">Registrese</a>

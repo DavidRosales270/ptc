@@ -3,16 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Illuminate\Http\Request;
-use Auth; 
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
-use Illuminate\Support\Facades\DB;
+use App\Repositories\Activity\ActivityRepository;
+use App\Repositories\User\UserRepository;
+use App\Support\Enum\UserStatus;
+use Auth;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
+    private $users;
+
+    private $activities;
+
+    public function __construct(UserRepository $users, ActivityRepository $activities)
+    {
+        $this->middleware('auth');
+        $this->users = $users;
+        $this->activities = $activities;
+    }
+
 	public function home()
 	{
 		return View('home.home');
@@ -22,15 +31,31 @@ class HomeController extends Controller
 	{
 		if (Auth::check() && Auth::user()->name == "admin")
 		{
-	    		/*$tiposanuncios = DB::select('select * from tiposanuncios where estado= ?', [1]);
-	    		return redirect('admin/config')
-	    			->with('resultado', $tiposanuncios );*/
-
-	    		return redirect('admin/index');
+		    return redirect('admin/index');
 	    	}
 		else
 		{
 			return redirect('home');
 		}
 	}
+
+	public function admin() {
+
+        $usersPerMonth = $this->users->countOfNewUsersPerMonth(
+            Carbon::now()->startOfYear(),
+            Carbon::now()
+        );
+
+        $stats = [
+            'total' => $this->users->count(),
+            'new' => $this->users->newUsersCount(),
+            'banned' => $this->users->countByStatus(UserStatus::BANNED),
+            'unconfirmed' => $this->users->countByStatus(UserStatus::UNCONFIRMED)
+        ];
+
+        $latestRegistrations = $this->users->latest(7);
+
+        return view('admin.index', compact('stats', 'latestRegistrations', 'usersPerMonth'));
+
+    }
 }

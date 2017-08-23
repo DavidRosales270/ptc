@@ -50,4 +50,13 @@ class AdminAnnounceController extends Controller
             ->withSuccess('Anuncio fue creada exitosamente!');
     }
 
+
+    public function delete(Announce $announce) {
+
+        $announce->delete();
+
+        return redirect()->route('admin.announce')
+            ->withSuccess('Anuncio fue eliminado!');
+    }
+
 }

@@ -37,7 +37,7 @@ body.auth {
     margin: 0 auto;
 }
 .auth-form h1 {
-    color: #FCA400
+    color: #FCA400;
     font-size: 24px;
     text-align: center;
     font-weight: bold;
@@ -71,7 +71,7 @@ body.auth {
 
 .checkbox.show:before {
     content: '\e013';
-    color: #FCA400
+    color: #FCA400;
     font-size: 17px;
     margin: 1px 0 0 3px;
     position: absolute;
@@ -758,7 +758,7 @@ body.sidebar-collapse #page-wrapper {
 }
 
 .panel-green {
-    background-color: #FCA400
+    background-color: #1fa67b;
     color: #fff;
 }
 

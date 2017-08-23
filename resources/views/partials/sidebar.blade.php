@@ -7,6 +7,10 @@
                     <div class="name"><strong>{{ Auth::user()->name }}</strong></div>
                 </div>
             </li>
+            <li class="active open">
+                <a href="{{ url('/') }}" class="active">
+                    <i class="fa fa-dashboard fa-fw"></i> Dashboard </a>
+            </li>
           
                 <li class="">
                     <a href="{{ route('admin.user') }}" class="">
@@ -16,7 +20,7 @@
 
                 <li class="">
                     <a href="{{ route('admin.announce') }}" class="">
-                        <i class="fa fa-users fa-fw glyphicon glyphicon-list-alt"></i> Anuncios 
+                        <i class="fa fa-list-alt fa-fw glyphicon glyphicon-list-alt"></i> Anuncios
                     </a>
                 </li>
                 
